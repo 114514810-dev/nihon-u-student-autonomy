@@ -1,7 +1,7 @@
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/NotFound";
-import { Route, Switch } from "wouter";
+import { Route, Switch, Router } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
@@ -11,7 +11,7 @@ import Issues from "./pages/Issues";
 import Finance from "./pages/Finance";
 import Roadmap from "./pages/Roadmap";
 
-function Router() {
+function AppRouter() {
   return (
     <Switch>
       <Route path={"/"} component={Home} />
@@ -41,7 +41,9 @@ function App() {
       >
         <TooltipProvider>
           <Toaster />
-          <Router />
+          <Router base="/nihon-u-student-autonomy">
+            <AppRouter />
+          </Router>
         </TooltipProvider>
       </ThemeProvider>
     </ErrorBoundary>
