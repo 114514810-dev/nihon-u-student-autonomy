@@ -14,11 +14,8 @@
       path = base + path;
     }
 
-    // クエリパラメータとハッシュを保持
-    var redirect = path + window.location.search + window.location.hash;
-    
-    // index.htmlにリダイレクト
-    window.location.replace(redirect);
+    // index.htmlにリダイレクトし、パスをハッシュとして渡す
+    window.location.replace(base + "/#" + path + window.location.search);
   </script>
 </head>
 <body>
