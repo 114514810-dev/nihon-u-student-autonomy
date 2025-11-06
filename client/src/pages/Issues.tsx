@@ -1,6 +1,6 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Link } from "wouter";
-import { ChevronLeft, AlertTriangle, CheckCircle2, XCircle } from "lucide-react";
+import { ChevronLeft, ShieldOff, Building, FileWarning, UsersRound } from "lucide-react";
 
 export default function Issues() {
   return (
@@ -9,12 +9,21 @@ export default function Issues() {
         <div className="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
           <h1 className="text-xl font-bold text-slate-900">日大 学生自治復活</h1>
           <div className="flex gap-6 text-sm">
-            <Link href="/" className="text-slate-700 hover:text-slate-900 font-medium">ホーム</Link>
-            <Link href="/governance" className="text-slate-700 hover:text-slate-900 font-medium">ガバナンスとは</Link>
-            <Link href="/history" className="text-slate-700 hover:text-slate-900 font-medium">不正事案の詳細</Link>
-            <Link href="/issues" className="text-slate-700 hover:text-slate-900 font-medium">ガバナンス欠陥</Link>
-            <Link href="/finance" className="text-slate-700 hover:text-slate-900 font-medium">財務情報</Link>
-            <Link href="/roadmap" className="text-slate-700 hover:text-slate-900 font-medium">改革と行動</Link>
+            <Link href="/" className="text-slate-700 hover:text-slate-900 font-medium">
+              ホーム
+            </Link>
+            <Link href="/history" className="text-slate-700 hover:text-slate-900 font-medium">
+              問題の経緯
+            </Link>
+            <Link href="/issues" className="text-slate-700 hover:text-slate-900 font-medium">
+              現状の課題
+            </Link>
+            <Link href="/finance" className="text-slate-700 hover:text-slate-900 font-medium">
+              財務情報
+            </Link>
+            <Link href="/roadmap" className="text-slate-700 hover:text-slate-900 font-medium">
+              ロードマップ
+            </Link>
           </div>
         </div>
       </nav>
@@ -25,366 +34,130 @@ export default function Issues() {
           ホームに戻る
         </Link>
 
-        <h1 className="text-4xl font-bold text-slate-900 mb-4">ガバナンス欠陥の分析</h1>
-        <p className="text-lg text-slate-600 mb-8">なぜ不正事件が起きたのか？経営学的な視点から分析します</p>
+        <h1 className="text-4xl font-bold text-slate-900 mb-4">ガバナンス欠陥の核心</h1>
+        <p className="text-lg text-slate-600 mb-8">
+          第三者委員会の調査結果をもとに、不正を許した統治構造の問題を整理します。
+        </p>
 
-        {/* Introduction */}
         <section className="mb-12">
           <Card className="bg-blue-50 border-blue-200">
             <CardHeader>
-              <CardTitle className="text-lg">ガバナンスの欠陥が不正を生む</CardTitle>
+              <CardTitle className="text-lg">調査報告書が示した構造的な欠陥</CardTitle>
             </CardHeader>
             <CardContent className="text-slate-700 space-y-3">
               <p>
-                日本大学で起きた不正事件は、単なる個人の不正ではなく、<strong>組織的な仕組みの欠陥</strong>に起因しています。
+                報告書は、「監査が届かない」「子会社がブラックボックス」「学生・教職員が関与できない」という3つの断絶が重なった結果、個人の判断で巨額資金が動いたと分析しています。
               </p>
               <p className="font-semibold text-slate-900">
-                本来あるべき大学の運営体制が機能していなかったために、不正が発生・継続・拡大しました。
+                以下ではそれぞれの断絶を掘り下げ、自治再建に向けた論点を整理します。
               </p>
             </CardContent>
           </Card>
         </section>
 
-        {/* Issue 1: Excessive Authority Concentration */}
         <section className="mb-12">
-          <h2 className="text-2xl font-bold text-slate-900 mb-6">欠陥1：理事長権限の過度な集中</h2>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-            <Card className="border-l-4 border-l-green-500">
-              <CardHeader>
-                <CardTitle className="text-lg flex items-center gap-2">
-                  <CheckCircle2 className="w-5 h-5 text-green-600" />
-                  本来あるべき姿
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="text-slate-700 space-y-3">
-                <div className="space-y-2 text-sm">
-                  <p>✓ 理事会が最高意思決定機関</p>
-                  <p>✓ 理事長の権限は制限される</p>
-                  <p>✓ 重要決定は理事会の承認が必要</p>
-                  <p>✓ 定期的な評価と交代</p>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="border-l-4 border-l-red-500">
-              <CardHeader>
-                <CardTitle className="text-lg flex items-center gap-2">
-                  <XCircle className="w-5 h-5 text-red-600" />
-                  日本大学の実態
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="text-slate-700 space-y-3">
-                <div className="space-y-2 text-sm">
-                  <p>✗ 理事長が理事会を支配</p>
-                  <p>✗ 理事長の一存で決定可能</p>
-                  <p>✗ 報告なく実行される</p>
-                  <p>✗ 長期間の権力保持</p>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-
-          <Card className="border-l-4 border-l-orange-500">
-            <CardHeader>
-              <CardTitle className="text-lg">この欠陥がもたらした結果</CardTitle>
+          <h2 className="text-2xl font-bold text-slate-900 mb-6">1. 監査体制が理事長に縛られていた</h2>
+          <Card className="border-l-4 border-l-red-500">
+            <CardHeader className="space-y-1">
+              <CardTitle className="text-lg flex items-center gap-2">
+                <ShieldOff className="w-5 h-5 text-red-600" />
+                報告書の指摘
+              </CardTitle>
             </CardHeader>
             <CardContent className="text-slate-700 space-y-3">
               <p>
-                田中英壽理事長が権力を独占し、井ノ口忠男氏に過度な権限を委譲しました。その結果、井ノ口氏は採点の改ざんや不正な取引を、チェックされることなく実行できました。
+                法人監査室は2名のみで、事業部への立入権限がなく書面確認に終始。監査役会は理事長室の了承を得ないと動けない慣行があり、理事会へ直接問題提起できませんでした。
               </p>
-              <div className="bg-red-50 p-3 rounded text-sm">
-                <strong>影響：</strong> 約4億円以上の不正取引が発生・継続
-              </div>
+              <p>
+                監査報告書は理事長への提出で止まり、理事会や評議員会には「問題なし」とだけ伝えられていたと記載されています。監査役自身も事業部を一度も視察していませんでした。
+              </p>
+              <p className="font-semibold text-red-700">
+                → 監査が機能するには、理事長から独立した報告ラインと、十分な人員・権限が不可欠です。
+              </p>
             </CardContent>
           </Card>
         </section>
 
-        {/* Issue 2: Audit Dysfunction */}
         <section className="mb-12">
-          <h2 className="text-2xl font-bold text-slate-900 mb-6">欠陥2：監査機能の不全</h2>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-            <Card className="border-l-4 border-l-green-500">
-              <CardHeader>
-                <CardTitle className="text-lg flex items-center gap-2">
-                  <CheckCircle2 className="w-5 h-5 text-green-600" />
-                  本来あるべき姿
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="text-slate-700 space-y-3">
-                <div className="space-y-2 text-sm">
-                  <p>✓ 監査役は理事長から独立</p>
-                  <p>✓ 全ての取引を監査可能</p>
-                  <p>✓ 理事会に直接報告</p>
-                  <p>✓ 十分な監査スタッフ</p>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="border-l-4 border-l-red-500">
-              <CardHeader>
-                <CardTitle className="text-lg flex items-center gap-2">
-                  <XCircle className="w-5 h-5 text-red-600" />
-                  日本大学の実態
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="text-slate-700 space-y-3">
-                <div className="space-y-2 text-sm">
-                  <p>✗ 監査役が理事長の支配下</p>
-                  <p>✗ 監査権限が限定的</p>
-                  <p>✗ 理事長を通じて報告</p>
-                  <p>✗ 人員不足</p>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-
-          <Card className="border-l-4 border-l-orange-500">
-            <CardHeader>
-              <CardTitle className="text-lg">この欠陥がもたらした結果</CardTitle>
+          <h2 className="text-2xl font-bold text-slate-900 mb-6">2. 株式会社日本大学事業部という「空白地帯」</h2>
+          <Card className="border-l-4 border-l-amber-500">
+            <CardHeader className="space-y-1">
+              <CardTitle className="text-lg flex items-center gap-2">
+                <Building className="w-5 h-5 text-amber-600" />
+                なぜブラックボックス化したのか
+              </CardTitle>
             </CardHeader>
             <CardContent className="text-slate-700 space-y-3">
               <p>
-                監査役が理事長の影響下にあったため、採点の改ざんや不正な取引が発見されませんでした。本来は監査役が「これは不正だ」と指摘すべきでしたが、その機能が果たされませんでした。
+                事業部は大学の100％子会社ですが、取締役会は形式的に年1回のみ。社外取締役・社外監査役はゼロで、議事録や内部規程も井ノ口取締役の管理下にありました。
               </p>
-              <div className="bg-red-50 p-3 rounded text-sm">
-                <strong>影響：</strong> 不正が発見されず、継続・拡大
-              </div>
+              <p>
+                調達・契約の決裁は事業部内で完結し、大学本部は結果の報告だけを受領。報告書は「本部が事業部の口座出納を把握しておらず、資金流出に気づく仕組みがなかった」と断じています。
+              </p>
+              <p className="font-semibold text-amber-700">
+                → 子会社管理のガイドライン、社外役員の導入、理事会と連動する監督プロセスが必須です。
+              </p>
             </CardContent>
           </Card>
         </section>
 
-        {/* Issue 3: Lack of Student Participation */}
         <section className="mb-12">
-          <h2 className="text-2xl font-bold text-slate-900 mb-6">欠陥3：学生・教職員の参加機会の不足</h2>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-            <Card className="border-l-4 border-l-green-500">
-              <CardHeader>
-                <CardTitle className="text-lg flex items-center gap-2">
-                  <CheckCircle2 className="w-5 h-5 text-green-600" />
-                  本来あるべき姿
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="text-slate-700 space-y-3">
-                <div className="space-y-2 text-sm">
-                  <p>✓ 学生自治会が独立して機能</p>
-                  <p>✓ 定期的な協議の場がある</p>
-                  <p>✓ 学生の声が経営に反映</p>
-                  <p>✓ 経営情報が開示される</p>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="border-l-4 border-l-red-500">
-              <CardHeader>
-                <CardTitle className="text-lg flex items-center gap-2">
-                  <XCircle className="w-5 h-5 text-red-600" />
-                  日本大学の実態
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="text-slate-700 space-y-3">
-                <div className="space-y-2 text-sm">
-                  <p>✗ 学生自治会が形骸化</p>
-                  <p>✗ 一方的な通知のみ</p>
-                  <p>✗ 学生の声が無視される</p>
-                  <p>✗ 情報が隠蔽される</p>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-
-          <Card className="border-l-4 border-l-orange-500">
-            <CardHeader>
-              <CardTitle className="text-lg">この欠陥がもたらした結果</CardTitle>
+          <h2 className="text-2xl font-bold text-slate-900 mb-6">3. 情報統制と内部通報の断絶</h2>
+          <Card className="border-l-4 border-l-blue-500">
+            <CardHeader className="space-y-1">
+              <CardTitle className="text-lg flex items-center gap-2">
+                <FileWarning className="w-5 h-5 text-blue-600" />
+                「声を上げられない」環境
+              </CardTitle>
             </CardHeader>
             <CardContent className="text-slate-700 space-y-3">
               <p>
-                学生が大学運営に参加できないため、不正が学生に知られませんでした。学生が知っていれば、「これはおかしい」と声を上げることができたはずです。
+                報告書によれば、内部通報窓口は本部総務部門に一本化され、匿名性が担保されていませんでした。過去に通報した職員が人事で不利益を被った事例が共有され、現場では沈黙が常態化していました。
               </p>
-              <div className="bg-red-50 p-3 rounded text-sm">
-                <strong>影響：</strong> 不正が学生に知られず、改善の機会が失われた
-              </div>
+              <p>
+                井ノ口氏に逆らうと異動させられるという恐怖が支配し、調達担当者は不正を知りながら抗議できなかったと証言しています。
+              </p>
+              <p className="font-semibold text-blue-700">
+                → 独立した通報窓口と報復禁止の徹底が、学生・教職員が不正を止める第一歩です。
+              </p>
             </CardContent>
           </Card>
         </section>
 
-        {/* Issue 4: Internal Control Deficiency */}
         <section className="mb-12">
-          <h2 className="text-2xl font-bold text-slate-900 mb-6">欠陥4：内部統制の欠陥</h2>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-            <Card className="border-l-4 border-l-green-500">
-              <CardHeader>
-                <CardTitle className="text-lg flex items-center gap-2">
-                  <CheckCircle2 className="w-5 h-5 text-green-600" />
-                  本来あるべき姿
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="text-slate-700 space-y-3">
-                <div className="space-y-2 text-sm">
-                  <p>✓ 複数承認制（複数人の承認が必要）</p>
-                  <p>✓ 職務分離（同一人物が承認と実行をしない）</p>
-                  <p>✓ 定期的なチェック</p>
-                  <p>✓ 全ての取引を記録</p>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="border-l-4 border-l-red-500">
-              <CardHeader>
-                <CardTitle className="text-lg flex items-center gap-2">
-                  <XCircle className="w-5 h-5 text-red-600" />
-                  日本大学の実態
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="text-slate-700 space-y-3">
-                <div className="space-y-2 text-sm">
-                  <p>✗ 一人の判断で決定可能</p>
-                  <p>✗ 井ノ口氏が承認と実行を兼任</p>
-                  <p>✗ チェック機能がない</p>
-                  <p>✗ 記録が改ざんされた</p>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-
-          <Card className="border-l-4 border-l-orange-500">
-            <CardHeader>
-              <CardTitle className="text-lg">この欠陥がもたらした結果</CardTitle>
+          <h2 className="text-2xl font-bold text-slate-900 mb-6">4. 学生・教職員が蚊帳の外だった意思決定</h2>
+          <Card className="border-l-4 border-l-purple-500">
+            <CardHeader className="space-y-1">
+              <CardTitle className="text-lg flex items-center gap-2">
+                <UsersRound className="w-5 h-5 text-purple-600" />
+                自治が働かなかった背景
+              </CardTitle>
             </CardHeader>
             <CardContent className="text-slate-700 space-y-3">
               <p>
-                井ノ口氏が採点を改ざんしても、誰もチェックしませんでした。複数の人が関わっていれば、「これはおかしい」と指摘できたはずです。
+                大学の重要事項は理事会でのみ決定され、学生・教職員の代表が参加する場は設けられていませんでした。報告書は、意思決定過程が閉鎖的であったことが不信を生み、チェック機能の欠如につながったと指摘します。
               </p>
-              <div className="bg-red-50 p-3 rounded text-sm">
-                <strong>影響：</strong> 不正が発見されず、継続・拡大
-              </div>
-            </CardContent>
-          </Card>
-        </section>
-
-        {/* Issue 5: Whistleblower System */}
-        <section className="mb-12">
-          <h2 className="text-2xl font-bold text-slate-900 mb-6">欠陥5：公益通報制度の不信</h2>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-            <Card className="border-l-4 border-l-green-500">
-              <CardHeader>
-                <CardTitle className="text-lg flex items-center gap-2">
-                  <CheckCircle2 className="w-5 h-5 text-green-600" />
-                  本来あるべき姿
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="text-slate-700 space-y-3">
-                <div className="space-y-2 text-sm">
-                  <p>✓ 複数の通報窓口</p>
-                  <p>✓ 通報者が保護される</p>
-                  <p>✓ 秘密が守られる</p>
-                  <p>✓ 迅速に調査・対応</p>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="border-l-4 border-l-red-500">
-              <CardHeader>
-                <CardTitle className="text-lg flex items-center gap-2">
-                  <XCircle className="w-5 h-5 text-red-600" />
-                  日本大学の実態
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="text-slate-700 space-y-3">
-                <div className="space-y-2 text-sm">
-                  <p>✗ 通報窓口がない</p>
-                  <p>✗ 報復の懸念がある</p>
-                  <p>✗ 秘密が守られない</p>
-                  <p>✗ 隠蔽される</p>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-
-          <Card className="border-l-4 border-l-orange-500">
-            <CardHeader>
-              <CardTitle className="text-lg">この欠陥がもたらした結果</CardTitle>
-            </CardHeader>
-            <CardContent className="text-slate-700 space-y-3">
               <p>
-                不正を見つけた人が、報告できる仕組みがありませんでした。また、報告すれば報復されるという懸念もありました。その結果、不正が隠蔽されました。
+                学生自治会が事業部問題を把握したのは報道後であり、事前に情報共有を受ける仕組みもありませんでした。
               </p>
-              <div className="bg-red-50 p-3 rounded text-sm">
-                <strong>影響：</strong> 不正が隠蔽され、改善の機会が失われた
-              </div>
+              <p className="font-semibold text-purple-700">
+                → 学生・教職員が参加する協議機関を設け、重要案件を事前に議論することが再発防止の要です。
+              </p>
             </CardContent>
           </Card>
         </section>
 
-        {/* Causal Relationship */}
-        <section className="mb-12">
-          <h2 className="text-2xl font-bold text-slate-900 mb-6">ガバナンス欠陥が不正につながった因果関係</h2>
-          
-          <Card className="bg-gradient-to-r from-red-50 to-orange-50 border-red-300">
-            <CardContent className="text-slate-700 space-y-4 pt-6">
-              <div className="space-y-3">
-                <div className="flex items-start gap-3">
-                  <div className="bg-red-600 text-white rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 font-semibold">1</div>
-                  <div>
-                    <h4 className="font-semibold text-slate-900">理事長権限の過度な集中</h4>
-                    <p className="text-sm">→ 井ノ口氏に権限を委譲</p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-3">
-                  <div className="bg-red-600 text-white rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 font-semibold">2</div>
-                  <div>
-                    <h4 className="font-semibold text-slate-900">監査機能の不全</h4>
-                    <p className="text-sm">→ 採点改ざんが発見されない</p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-3">
-                  <div className="bg-red-600 text-white rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 font-semibold">3</div>
-                  <div>
-                    <h4 className="font-semibold text-slate-900">学生・教職員の参加機会の不足</h4>
-                    <p className="text-sm">→ 学生が不正を知らない</p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-3">
-                  <div className="bg-red-600 text-white rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 font-semibold">4</div>
-                  <div>
-                    <h4 className="font-semibold text-slate-900">内部統制の欠陥</h4>
-                    <p className="text-sm">→ 複数承認制がない</p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-3">
-                  <div className="bg-red-600 text-white rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 font-semibold">5</div>
-                  <div>
-                    <h4 className="font-semibold text-slate-900">公益通報制度の不信</h4>
-                    <p className="text-sm">→ 不正を見つけても報告できない</p>
-                  </div>
-                </div>
-              </div>
-              <div className="border-t border-red-300 pt-4 mt-4">
-                <p className="font-semibold text-red-900 text-center">
-                  結果：不正が継続・拡大し、約5億円以上の損害が発生
-                </p>
-              </div>
-            </CardContent>
-          </Card>
-        </section>
-
-        {/* CTA Section */}
-        <section className="bg-blue-50 rounded-lg p-8 text-center">
-          <h3 className="text-xl font-bold text-slate-900 mb-4">これからどうすべきか？</h3>
+        <section className="bg-slate-100 rounded-lg p-8 text-center">
+          <h3 className="text-xl font-bold text-slate-900 mb-4">改革に向けて</h3>
           <p className="text-slate-700 mb-6">
-            これらのガバナンス欠陥を改善することが、日本大学の改革に必要です。
+            監査ラインの独立、子会社統治の透明化、通報制度の再設計、学生参画の制度化。この4点を実現しない限り、報告書が指摘したリスクは残り続けます。
           </p>
           <Link href="/roadmap" className="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 font-semibold">
-            改革案と学生の役割を見る
+            改革ロードマップを確認する
           </Link>
         </section>
       </main>
 
-      {/* Footer */}
       <footer className="bg-slate-900 text-white py-8 mt-20">
         <div className="max-w-6xl mx-auto px-4 text-center text-sm text-slate-400">
           <p>日本大学 学生自治復活プロジェクト © 2024</p>

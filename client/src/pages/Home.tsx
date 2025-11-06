@@ -49,21 +49,21 @@ export default function Home() {
                 日本大学では、かつて学生自治が機能していました。しかし、現在、その自治は形骸化しています。同時に、大学の運営上の問題が明らかになり、学生の信頼が揺らいでいます。
               </p>
               <p>
-                2022年3月31日、日本大学は「元理事及び前理事長による不正事案に係る第三者委員会」の調査報告書を公開しました。この報告書は、日大の運営上の深刻な問題を明らかにしました。
+                本サイトの分析は、2022年3月31日に公表された「元理事及び前理事長による不正事案に係る第三者委員会調査報告書」を一次資料として構成されています。第三者委員会が明らかにした事実と提言を、学生目線で読み解きました。
               </p>
             </div>
             <Card className="bg-blue-50 border-blue-200">
               <CardHeader>
-                <CardTitle className="text-lg">問題の核心</CardTitle>
+                <CardTitle className="text-lg">報告書が語る危機</CardTitle>
               </CardHeader>
               <CardContent className="space-y-3 text-sm text-slate-700">
                 <div>
                   <p className="font-semibold text-slate-900">事業部を通じた不透明な取引</p>
-                  <p>特定の関係者に対し、不正な契約が行われていました。</p>
+                  <p>株式会社日本大学事業部がガバナンスの死角となり、巨額資金が流出しました。</p>
                 </div>
                 <div>
-                  <p className="font-semibold text-slate-900">一部役員による強圧的支配</p>
-                  <p>ガバナンスが完全に欠如していました。</p>
+                  <p className="font-semibold text-slate-900">監査機能の麻痺</p>
+                  <p>理事長直下に置かれた監査ラインが不正を見逃し、学生・教職員の声も届きませんでした。</p>
                 </div>
               </CardContent>
             </Card>
@@ -109,13 +109,13 @@ export default function Home() {
                         <Lightbulb className="w-5 h-5 text-yellow-600" />
                         現状の課題
                       </CardTitle>
-                      <CardDescription>日大が抱える問題</CardDescription>
+                      <CardDescription>監査と事業部統治の致命的な欠陥</CardDescription>
                     </div>
                   </div>
                 </CardHeader>
                 <CardContent className="text-slate-700">
                   <p className="mb-4">
-                    ガバナンスの不全、学生自治の形骸化、財務の透明性など、日大が今抱えている具体的な問題を解説します。
+                    第三者委員会が指摘した監査ラインの麻痺、事業部のブラックボックス化、内部通報の断絶、学生不在の意思決定を詳しく読み解きます。
                   </p>
                   <div className="flex items-center text-blue-600 font-semibold">
                     詳しく見る <ChevronRight className="w-4 h-4 ml-2" />

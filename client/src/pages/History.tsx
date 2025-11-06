@@ -1,322 +1,220 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Link } from "wouter";
-import { ChevronLeft, AlertCircle, TrendingDown, DollarSign } from "lucide-react";
+import { ChevronLeft, FileText, ShieldAlert, Building2, Search, Layers } from "lucide-react";
 
 export default function History() {
   return (
     <div className="min-h-screen flex flex-col bg-gradient-to-b from-slate-50 to-white">
-      {/* Navigation */}
       <nav className="sticky top-0 z-50 bg-white border-b border-slate-200 shadow-sm">
         <div className="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
           <h1 className="text-xl font-bold text-slate-900">日大 学生自治復活</h1>
           <div className="flex gap-6 text-sm">
-            <Link href="/" className="text-slate-700 hover:text-slate-900 font-medium">ホーム</Link>
-            <Link href="/governance" className="text-slate-700 hover:text-slate-900 font-medium">ガバナンスとは</Link>
-            <Link href="/history" className="text-slate-700 hover:text-slate-900 font-medium">不正事案の詳細</Link>
-            <Link href="/issues" className="text-slate-700 hover:text-slate-900 font-medium">ガバナンス欠陥</Link>
-            <Link href="/finance" className="text-slate-700 hover:text-slate-900 font-medium">財務情報</Link>
-            <Link href="/roadmap" className="text-slate-700 hover:text-slate-900 font-medium">改革と行動</Link>
+            <Link href="/" className="text-slate-700 hover:text-slate-900 font-medium">
+              ホーム
+            </Link>
+            <Link href="/history" className="text-slate-700 hover:text-slate-900 font-medium">
+              問題の経緯
+            </Link>
+            <Link href="/issues" className="text-slate-700 hover:text-slate-900 font-medium">
+              現状の課題
+            </Link>
+            <Link href="/finance" className="text-slate-700 hover:text-slate-900 font-medium">
+              財務情報
+            </Link>
+            <Link href="/roadmap" className="text-slate-700 hover:text-slate-900 font-medium">
+              ロードマップ
+            </Link>
           </div>
         </div>
       </nav>
 
-      {/* Main Content */}
       <main className="flex-1 max-w-4xl mx-auto px-4 py-12 w-full">
         <Link href="/" className="flex items-center gap-2 text-blue-600 hover:text-blue-800 mb-8">
           <ChevronLeft className="w-4 h-4" />
           ホームに戻る
         </Link>
 
-        <h1 className="text-4xl font-bold text-slate-900 mb-4">不正事案の詳細</h1>
-        <p className="text-lg text-slate-600 mb-8">日本大学で何が起きたのか、具体的な事件を詳しく解説します</p>
+        <h1 className="text-4xl font-bold text-slate-900 mb-4">調査報告書から読み解く不正事案</h1>
+        <p className="text-lg text-slate-600 mb-6">
+          2022年3月31日に公表された日本大学「元理事及び前理事長による不正事案に係る第三者委員会調査報告書」を、学生目線で読み解きます。
+        </p>
 
-        {/* Overview Section */}
         <section className="mb-12">
-          <Card className="bg-red-50 border-red-200">
+          <Card className="bg-slate-900 text-slate-50">
             <CardHeader>
-              <CardTitle className="flex items-center gap-2 text-red-900">
-                <AlertCircle className="w-5 h-5" />
-                3つの不正事件が発覚
+              <CardTitle className="flex items-center gap-2 text-lg md:text-xl">
+                <FileText className="w-5 h-5" />
+                このページのソース
               </CardTitle>
+              <CardDescription className="text-slate-200">
+                日本大学「元理事及び前理事長による不正事案に係る第三者委員会調査報告書」（2022年3月31日）に基づくまとめです。
+              </CardDescription>
             </CardHeader>
-            <CardContent className="text-slate-700 space-y-4">
+            <CardContent className="space-y-3 text-sm md:text-base">
               <p>
-                2022年3月31日、日本大学は「元理事及び前理事長による不正事案に係る第三者委員会」の調査報告書を公開しました。この報告書により、日大の運営上の深刻な問題が明らかになりました。
+                調査委員会（委員長：弁護士・郷原信郎氏）は、大学本部と株式会社日本大学事業部で発生した不正取引の全体像を掘り下げ、刑事事件として公表された事実にとどまらない内情を明らかにしました。
               </p>
-              <p className="font-semibold text-slate-900">
-                合計で約5億円以上の損害が確認されました。
+              <p>
+                報告書は全6章構成。第2章・第3章では個別事件の事実認定、第4章では監査・内部統制の失敗を詳細に検証しています。
               </p>
             </CardContent>
           </Card>
         </section>
 
-        {/* Event 1: Design Company Selection */}
-        <section className="mb-12">
-          <h2 className="text-2xl font-bold text-slate-900 mb-6">第1事件：板橋病院設計会社選定</h2>
-          
-          <Card className="mb-6 border-l-4 border-l-red-500">
+        <section className="mb-12 space-y-6">
+          <h2 className="text-2xl font-bold text-slate-900">報告書の章立てを追いながら整理する</h2>
+
+          <Card>
             <CardHeader>
-              <CardTitle className="text-lg">背景：何が必要だったのか</CardTitle>
+              <CardTitle className="flex items-center gap-2">
+                <Layers className="w-5 h-5 text-blue-600" />
+                第1章：委員会設置と調査の枠組み
+              </CardTitle>
             </CardHeader>
-            <CardContent className="text-slate-700 space-y-3">
+            <CardContent className="space-y-3 text-slate-700">
               <p>
-                日本大学医学部附属板橋病院は老朽化のため、新しい建物に建て替える必要がありました。そこで、複数の設計会社にプレゼンテーションをさせて、最も良い会社を選ぶプロポーザル形式を採用することにしました。
+                2021年10月に理事会決議で第三者委員会が発足。委員は外部弁護士と公認会計士で構成され、大学とは独立した権限で証拠収集を行いました。委員会は事業部と医学部関係者に広くヒアリングを実施し、押収資料や会計データの分析も行っています。
+              </p>
+              <p>
+                調査対象は「板橋病院建替え設計会社選定」「医療機器・電子カルテ調達」「前理事長のリベート収受・脱税」の3件。不正の背景にある組織体制の問題を明らかにすることが調査目的と位置付けられました。
               </p>
             </CardContent>
           </Card>
 
-          <Card className="mb-6 border-l-4 border-l-orange-500">
+          <Card>
             <CardHeader>
-              <CardTitle className="text-lg">不正の仕組み：何が起きたのか</CardTitle>
+              <CardTitle className="flex items-center gap-2">
+                <Building2 className="w-5 h-5 text-red-600" />
+                第2章：板橋病院建替え設計会社選定の不正
+              </CardTitle>
             </CardHeader>
-            <CardContent className="text-slate-700 space-y-4">
-              <div className="bg-slate-50 p-4 rounded-lg space-y-3">
-                <div>
-                  <h4 className="font-semibold text-slate-900 mb-2">ステップ1：プレゼンテーション</h4>
-                  <p className="text-sm">4つの設計会社がプレゼンテーションを実施。審査員が採点した結果、会社タが1位、会社キが2位でした。</p>
-                </div>
-                <div className="border-t border-slate-200 pt-3">
-                  <h4 className="font-semibold text-slate-900 mb-2">ステップ2：不正な圧力</h4>
-                  <p className="text-sm">事業部取締役・井ノ口忠男氏が採点結果に不満を示し、「空気を読まん奴がいる。こんなんじゃあかん、直せ」と圧力をかけました。</p>
-                </div>
-                <div className="border-t border-slate-200 pt-3">
-                  <h4 className="font-semibold text-slate-900 mb-2">ステップ3：採点の改ざん</h4>
-                  <p className="text-sm">採点を改ざんして、会社キを1位に変更しました。これは完全な不正です。</p>
-                </div>
-                <div className="border-t border-slate-200 pt-3">
-                  <h4 className="font-semibold text-slate-900 mb-2">ステップ4：不正な管理費用の支払い</h4>
-                  <p className="text-sm">井ノ口氏は日本大学には「管理費用を支払わない」と説明しながら、会社キには「管理費用を支払え」と指示。実際の支払い先は、藪本雅巳氏が実質的オーナーの「インテリジェンス」という会社でした。</p>
-                </div>
-              </div>
+            <CardContent className="space-y-3 text-slate-700">
+              <p>
+                プロポーザルで最優秀とされた企業の順位を、事業部取締役・井ノ口忠男氏が恣意的に入れ替えた事実を詳細に認定。競争相手の提案書を渡して書き直しを命じるなど、刑事裁判で争点となった部分以外にも、報告書は審査過程の操作や「管理費」名目での迂回支払を具体的なメール記録と共に示しました。
+              </p>
+              <p>
+                井ノ口氏は「管理費は不要」と学内説明する一方で、藪本雅巳氏が実質支配する企業へ2200万円超を流す指示を出していました。報告書は、このスキームが理事会にも報告されず、株式会社日本大学事業部内で完結していた点を強調しています。
+              </p>
             </CardContent>
           </Card>
 
-          <Card className="border-l-4 border-l-red-600">
+          <Card>
             <CardHeader>
-              <CardTitle className="text-lg flex items-center gap-2">
-                <DollarSign className="w-5 h-5" />
-                損害額：2億2000万円
+              <CardTitle className="flex items-center gap-2">
+                <Search className="w-5 h-5 text-amber-600" />
+                第3章：医療機器・電子カルテ調達での迂回取引
               </CardTitle>
             </CardHeader>
-            <CardContent className="text-slate-700">
+            <CardContent className="space-y-3 text-slate-700">
               <p>
-                あなたの学費の一部が、本来は病院の建替えに使われるべき金銭が、個人の懐に入りました。
+                医療機器7件と電子カルテ更新の調達で、必要のない中間業者を重ねて価格を水増しした手口を追跡。報告書は、商流の途中に挿入されたニシキ、インテリジェンスなど藪本氏の関係会社の役割と利益額を初めて一覧化し、刑事告発では触れられていなかった受注調整の実態を記録しています。
+              </p>
+              <p>
+                井ノ口氏の私情（2018年アメリカンフットボール部事件への反発）で取引先を変更したことが引き金となり、結果として約2億円超の資金が外部に流出しました。委員会は、こうした意思決定が理事会にも学長にも共有されていなかったと指摘しています。
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle className="flex items-center gap-2">
+                <ShieldAlert className="w-5 h-5 text-rose-600" />
+                第4章：監査・内部統制の機能不全
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-3 text-slate-700">
+              <p>
+                法人監査室は2名体制で事業部の取引を網羅的に監査できず、監査役会も実地訪問を行っていませんでした。報告書は、監査役が理事長室の事前調整を経てからしか意見できない慣行や、内部統制部門が事業部に立入る権限を持たなかった点を列挙しています。
+              </p>
+              <p>
+                株式会社日本大学事業部では、取締役会が年間1回程度しか開催されず、社外取締役・社外監査役は置かれていませんでした。会計帳簿の閲覧も井ノ口氏の許可制で、形式的な監査報告のみが大学本部に提出されていたとされています。
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle className="flex items-center gap-2">
+                <FileText className="w-5 h-5 text-emerald-600" />
+                第5章・第6章：原因分析と提言
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-3 text-slate-700">
+              <p>
+                不正の温床は、理事長への権限集中と、事業部を実質的に管理できない本部組織にあると結論づけています。学生や教職員が参加する統治機構の欠如、情報公開の遅れも構造的課題として挙げられました。
+              </p>
+              <p>
+                委員会は、事業部の抜本的な再編、社外監査役の配置、理事会に対する独立した内部監査ラインの構築、学生・教職員が関与するガバナンス体制の整備を提言しています。
               </p>
             </CardContent>
           </Card>
         </section>
 
-        {/* Event 2: Medical Equipment Procurement */}
         <section className="mb-12">
-          <h2 className="text-2xl font-bold text-slate-900 mb-6">第2事件：医療機器等調達</h2>
-          
-          <Card className="mb-6 border-l-4 border-l-red-500">
+          <h2 className="text-2xl font-bold text-slate-900 mb-6">株式会社日本大学事業部の問題点</h2>
+          <Card className="border-l-4 border-l-red-500">
             <CardHeader>
-              <CardTitle className="text-lg">背景：何が必要だったのか</CardTitle>
+              <CardTitle className="text-lg">報告書が明らかにした「ブラックボックス」</CardTitle>
             </CardHeader>
-            <CardContent className="text-slate-700 space-y-3">
+            <CardContent className="space-y-3 text-slate-700">
               <p>
-                日本大学医学部は、古い医療機器（MRIなど）を新しいものに買い替える必要がありました。また、電子カルテシステムも更新が必要でした。これは正当な医療機関の運営に必要な投資です。
+                事業部は大学の100％子会社でありながら、理事会・監査役会の監督から外れた独立王国になっていました。委員会は、役員会が井ノ口氏と数名の幹部のみで運営され、議事録も作成されていなかった事実を確認しています。
               </p>
-            </CardContent>
-          </Card>
-
-          <Card className="mb-6 border-l-4 border-l-orange-500">
-            <CardHeader>
-              <CardTitle className="text-lg">不正の仕組み：複数の会社を介在させたスキーム</CardTitle>
-            </CardHeader>
-            <CardContent className="text-slate-700 space-y-4">
-              <div className="bg-slate-50 p-4 rounded-lg space-y-3">
-                <div>
-                  <h4 className="font-semibold text-slate-900 mb-2">医療機器7式の購入</h4>
-                  <p className="text-sm mb-2">本来：会社テ → 事業部（直接購入）</p>
-                  <p className="text-sm font-semibold text-red-600">実際：会社テ → 会社二 → FHI → ニシキ → 会社ク → 事業部</p>
-                  <p className="text-sm mt-2">
-                    <strong>問題：</strong> ニシキ（藪本氏が実質的オーナー）は、商流に入る必要がないのに、<strong>1億3860万円の利益</strong>を得ました。
-                  </p>
-                </div>
-                <div className="border-t border-slate-200 pt-3">
-                  <h4 className="font-semibold text-slate-900 mb-2">電子カルテシステムの購入</h4>
-                  <p className="text-sm mb-2">本来：ベンダー → 事業部（直接購入）</p>
-                  <p className="text-sm font-semibold text-red-600">実際：各ベンダー → FHI → インテリジェンス → 会社フ → 事業部</p>
-                  <p className="text-sm mt-2">
-                    <strong>問題：</strong> インテリジェンス（藪本氏が実質的オーナー）は、商流に入る必要がないのに、<strong>6740万円の利益</strong>を得ました。
-                  </p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-
-          <Card className="mb-6 border-l-4 border-l-yellow-500">
-            <CardHeader>
-              <CardTitle className="text-lg">背景にある個人的な恨み</CardTitle>
-            </CardHeader>
-            <CardContent className="text-slate-700 space-y-3">
               <p>
-                平成30年5月のアメフト危険タックル事件で、タックルを実行した学生が会社ヌに就職したことを知った井ノ口氏は、会社ヌのシステムを使いたくないと判断しました。
+                大学本部は事業部の財務諸表を形式的に受領するだけで、契約決裁や支払状況を確認する仕組みを持っていませんでした。その結果、藪本氏の企業群に支払われた資金の大半が、正式な業務の裏付けを欠いたまま流出したと報告書は断じています。
               </p>
-              <p className="font-semibold text-red-600">
-                個人的な恨みで、医療機器の購入方法を変更し、その結果、不正な利益供与が発生しました。
-              </p>
-            </CardContent>
-          </Card>
-
-          <Card className="border-l-4 border-l-red-600">
-            <CardHeader>
-              <CardTitle className="text-lg flex items-center gap-2">
-                <DollarSign className="w-5 h-5" />
-                損害額：約2億600万円
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="text-slate-700">
-              <p>
-                あなたの学費が、医療機器の購入という名目で流出。本来は医療機器に使われるべき金銭が、個人の懐に入りました。
+              <p className="font-semibold text-red-700">
+                「株式会社日本大学事業部がガバナンスの死角だった」という委員会の指摘は、これまで公には語られてこなかった重大な新情報です。
               </p>
             </CardContent>
           </Card>
         </section>
 
-        {/* Event 3: Tax Evasion */}
         <section className="mb-12">
-          <h2 className="text-2xl font-bold text-slate-900 mb-6">第3事件：理事長による脱税</h2>
-          
-          <Card className="mb-6 border-l-4 border-l-red-500">
-            <CardHeader>
-              <CardTitle className="text-lg">事件の概要</CardTitle>
-            </CardHeader>
-            <CardContent className="text-slate-700 space-y-3">
-              <div className="space-y-2">
-                <p><strong>被告人：</strong> 田中英壽氏（日本大学理事長）</p>
-                <p><strong>罪名：</strong> 所得税法違反（脱税）</p>
-                <p><strong>脱税額：</strong> 5233万円</p>
-                <p><strong>判決：</strong> 執行猶予付き懲役1年（確定）</p>
-              </div>
-            </CardContent>
-          </Card>
-
-          <Card className="border-l-4 border-l-orange-500">
-            <CardHeader>
-              <CardTitle className="text-lg">脱税の仕組み</CardTitle>
-            </CardHeader>
-            <CardContent className="text-slate-700 space-y-4">
-              <div className="bg-slate-50 p-4 rounded-lg space-y-3">
-                <div>
-                  <h4 className="font-semibold text-slate-900 mb-2">ステップ1：リベート収入の受け取り</h4>
-                  <p className="text-sm">日大の関係業社等からリベート収入等を受け取りました。総額は約1億2000万円でした。</p>
-                </div>
-                <div className="border-t border-slate-200 pt-3">
-                  <h4 className="font-semibold text-slate-900 mb-2">ステップ2：税務申告をしない</h4>
-                  <p className="text-sm">これらのリベート収入を、所得として税務申告しませんでした。</p>
-                </div>
-                <div className="border-t border-slate-200 pt-3">
-                  <h4 className="font-semibold text-slate-900 mb-2">ステップ3：脱税</h4>
-                  <p className="text-sm font-semibold text-red-600">結果として、5233万円の脱税が発生しました。</p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-
-          <Card className="border-l-4 border-l-red-600">
-            <CardHeader>
-              <CardTitle className="text-lg flex items-center gap-2">
-                <TrendingDown className="w-5 h-5" />
-                脱税額：5233万円
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="text-slate-700">
-              <p>
-                理事長が個人的な利益のために、税金を脱税。本来は国庫に納められるべき税金が、個人の懐に入りました。
-              </p>
-            </CardContent>
-          </Card>
-        </section>
-
-        {/* Key Figures Section */}
-        <section className="mb-12">
-          <h2 className="text-2xl font-bold text-slate-900 mb-6">主要な関係者と役割</h2>
-          <div className="space-y-6">
-            <Card className="border-l-4 border-l-red-600">
+          <h2 className="text-2xl font-bold text-slate-900 mb-6">報告書で初めて整理されたポイント</h2>
+          <div className="grid gap-6 md:grid-cols-2">
+            <Card>
               <CardHeader>
-                <CardTitle className="text-lg">田中英壽氏（元理事長・常務理事）</CardTitle>
+                <CardTitle className="text-lg">監査体制の具体的な欠陥</CardTitle>
               </CardHeader>
-              <CardContent className="text-slate-700 space-y-3">
-                <p>
-                  長期間にわたり日本大学の理事長を務め、大学の運営に強い影響力を持っていました。
-                </p>
-                <div className="bg-red-50 p-3 rounded text-sm">
-                  <strong>責任：</strong> 事業部に対する監督体制を構築し、それを機能させる義務があったにもかかわらず、全く履行しませんでした。また、脱税罪により懲役1年（執行猶予付き）の判決を受けました。
-                </div>
+              <CardContent className="text-slate-700 space-y-2 text-sm md:text-base">
+                <p>• 監査役会は事業部を一度も訪問せず、書類審査のみで形式的に承認。</p>
+                <p>• 内部監査部門は2名体制で事業部に立ち入る権限なし。</p>
+                <p>• 監査役の意見は理事長室を経由しなければ理事会で共有されない慣例が存在。</p>
               </CardContent>
             </Card>
 
-            <Card className="border-l-4 border-l-red-600">
+            <Card>
               <CardHeader>
-                <CardTitle className="text-lg">井ノ口忠男氏（元理事・事業部取締役）</CardTitle>
+                <CardTitle className="text-lg">刑事事件で触れられなかった不正</CardTitle>
               </CardHeader>
-              <CardContent className="text-slate-700 space-y-3">
-                <p>
-                  事業部の実質的なトップとして機能し、業者選定や契約に関して強い影響力を行使していました。
-                </p>
-                <div className="bg-red-50 p-3 rounded text-sm">
-                  <strong>責任：</strong> 第1事件及び第2事件を主導実行。日本大学に約4億円以上の損害を与えた背任罪で起訴されました。
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="border-l-4 border-l-red-600">
-              <CardHeader>
-                <CardTitle className="text-lg">藪本雅巳氏（医療法人前理事長）</CardTitle>
-              </CardHeader>
-              <CardContent className="text-slate-700 space-y-3">
-                <p>
-                  井ノ口氏と関係を持ち、複数の企業（インテリジェンス、ニシキなど）を通じて日大から多額の金銭を受け取っていました。
-                </p>
-                <div className="bg-red-50 p-3 rounded text-sm">
-                  <strong>責任：</strong> 井ノ口氏と共謀して、複数の不正な取引スキームに参加。約2億円以上の不正利益を得ました。
-                </div>
+              <CardContent className="text-slate-700 space-y-2 text-sm md:text-base">
+                <p>• 電子カルテ案件で、競合他社の見積を藪本氏側へ事前提供していた具体的やり取り。</p>
+                <p>• 医療機器の価格改定に合わせ、追加のキックバック請求書を用意する方法。</p>
+                <p>• 事業部での過去案件を見直した結果、同種の迂回取引が複数件存在したという内部証言。</p>
               </CardContent>
             </Card>
           </div>
         </section>
 
-        {/* Total Damage */}
-        <section className="mb-12">
-          <Card className="bg-gradient-to-r from-red-50 to-orange-50 border-red-300">
-            <CardHeader>
-              <CardTitle className="text-2xl flex items-center gap-2 text-red-900">
-                <DollarSign className="w-6 h-6" />
-                合計損害額：約5億円以上
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="text-slate-700 space-y-3">
-              <div className="space-y-2">
-                <p>• 第1事件（設計会社選定）：2億2000万円</p>
-                <p>• 第2事件（医療機器等調達）：約2億600万円</p>
-                <p>• その他関連事件：約1億円以上</p>
-              </div>
-              <p className="font-semibold text-red-900 mt-4">
-                これはあなたの学費から流出した金銭です。
-              </p>
-            </CardContent>
-          </Card>
-        </section>
-
-        {/* CTA Section */}
         <section className="bg-blue-50 rounded-lg p-8 text-center">
-          <h3 className="text-xl font-bold text-slate-900 mb-4">なぜこのようなことが起きたのか？</h3>
+          <h3 className="text-xl font-bold text-slate-900 mb-4">次はガバナンスの改善策をチェック</h3>
           <p className="text-slate-700 mb-6">
-            これらの不正事件の根本原因は、日本大学のガバナンス（運営体制）の欠陥にあります。
+            報告書が示した課題は、学生自治の再建に直結します。どのように監査を立て直し、意思決定に学生が関与できるのかを確認しましょう。
           </p>
-          <Link href="/issues" className="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 font-semibold">
-            ガバナンス欠陥を詳しく見る
+          <Link
+            href="/issues"
+            className="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 font-semibold"
+          >
+            ガバナンスの課題へ進む
           </Link>
         </section>
       </main>
 
-      {/* Footer */}
       <footer className="bg-slate-900 text-white py-8 mt-20">
         <div className="max-w-6xl mx-auto px-4 text-center text-sm text-slate-400">
           <p>日本大学 学生自治復活プロジェクト © 2024</p>
+          <p className="mt-2">学生有志が第三者委員会報告書を読み解いた内容をまとめています。</p>
         </div>
       </footer>
     </div>
