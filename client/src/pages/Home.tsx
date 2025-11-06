@@ -93,7 +93,7 @@ export default function Home() {
                     元理事長・元理事による不正事案の具体的な内容、関係者、調査報告書の概要を学生向けにわかりやすく説明します。
                   </p>
                   <div className="flex items-center text-blue-600 font-semibold">
-                    詳しく見る <ChevronRight className="w-4 h-4 ml-2" />
+                    詳しく読む <ChevronRight className="w-4 h-4 ml-2" />
                   </div>
                 </CardContent>
               </Card>
@@ -118,7 +118,7 @@ export default function Home() {
                     ガバナンスの不全、学生自治の形骸化、財務の透明性など、日大が今抱えている具体的な問題を解説します。
                   </p>
                   <div className="flex items-center text-blue-600 font-semibold">
-                    詳しく見る <ChevronRight className="w-4 h-4 ml-2" />
+                    詳しく読む <ChevronRight className="w-4 h-4 ml-2" />
                   </div>
                 </CardContent>
               </Card>
@@ -143,7 +143,7 @@ export default function Home() {
                     サンキー図を使って、日大がどのようにお金を集め、何に使っているかを視覚化します。
                   </p>
                   <div className="flex items-center text-blue-600 font-semibold">
-                    詳しく見る <ChevronRight className="w-4 h-4 ml-2" />
+                    詳しく読む <ChevronRight className="w-4 h-4 ml-2" />
                   </div>
                 </CardContent>
               </Card>
@@ -168,7 +168,7 @@ export default function Home() {
                     学生自治を復活させるための具体的なアクション案と、学生が取るべき行動を提案します。
                   </p>
                   <div className="flex items-center text-blue-600 font-semibold">
-                    詳しく見る <ChevronRight className="w-4 h-4 ml-2" />
+                    詳しく読む <ChevronRight className="w-4 h-4 ml-2" />
                   </div>
                 </CardContent>
               </Card>
@@ -183,9 +183,41 @@ export default function Home() {
             皆さんの大学です。皆さんの学費です。皆さんの学生生活です。
             大学運営に関わるのは、大学当局だけではありません。学生が主体的に関わることで、より良い大学、より良い学生生活を実現することができます。
           </p>
-          <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white">
-            学生自治会設立に参加する
-          </Button>
+          <a
+            href="https://docs.google.com/forms/d/e/1FAIpQLSe9JGWRppBHczwj1ruRSvRkaLetJgvtQWbT7ywmvodQtZHweA/viewform"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold"
+          >
+            学生自治復活に学生自治復活に参加する
+          </a>
+        </section>
+
+        {/* Next Steps Section */}
+        <section className="mt-16 mb-12">
+          <h3 className="text-2xl font-bold text-slate-900 mb-8 text-center">次のステップ</h3>
+          <div className="grid md:grid-cols-3 gap-6">
+            <div className="bg-blue-50 rounded-lg p-6 text-center">
+              <div className="text-3xl font-bold text-blue-600 mb-3">1</div>
+              <h4 className="text-lg font-semibold text-slate-900 mb-2">理解する</h4>
+              <p className="text-slate-700">このサイトで、日大の問題とガバナンスについて学びましょう。</p>
+            </div>
+            <div className="bg-blue-50 rounded-lg p-6 text-center">
+              <div className="text-3xl font-bold text-blue-600 mb-3">2</div>
+              <h4 className="text-lg font-semibold text-slate-900 mb-2">学生自治復活に参加する</h4>
+              <p className="text-slate-700">Google Formで、あなたの意見や要望を送りましょう。</p>
+            </div>
+            <div className="bg-blue-50 rounded-lg p-6 text-center">
+              <div className="text-3xl font-bold text-blue-600 mb-3">3</div>
+              <h4 className="text-lg font-semibold text-slate-900 mb-2">広める</h4>
+              <p className="text-slate-700">友人や同級生にこのサイトを共有し、一緒に考えましょう。</p>
+            </div>
+          </div>
+          <div className="text-center mt-8">
+            <Link href="/faq" className="inline-block text-blue-600 font-semibold hover:text-blue-700">
+              よくある質問を見る →
+            </Link>
+          </div>
         </section>
       </main>
 
