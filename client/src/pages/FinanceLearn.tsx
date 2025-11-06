@@ -184,7 +184,7 @@ export default function FinanceLearn() {
               <div className="bg-purple-50 p-4 rounded-lg border border-purple-200">
                 <p className="font-bold text-purple-900 mb-2">④学生自治の役割</p>
                 <p className="text-sm text-gray-700">
-                  学生が大学の経営に参加することで、財務の透明性を監視できます。学生自治会が機能することで、学生の声が経営に反映されます。
+                  学生が大学の経営に学生自治復活に参加することで、財務の透明性を監視できます。学生自治会が機能することで、学生の声が経営に反映されます。
                 </p>
               </div>
             </div>
@@ -206,7 +206,7 @@ export default function FinanceLearn() {
                 onClick={() => setLocation("/issues")}
                 className="bg-white text-blue-600 hover:bg-blue-50"
               >
-                現状の課題を詳しく見る
+                現状の課題を詳しく読む
               </Button>
               <Button
                 onClick={() => setLocation("/roadmap")}

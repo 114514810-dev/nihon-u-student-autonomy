@@ -12,6 +12,7 @@ import Issues from "./pages/Issues";
 import Finance from "./pages/Finance";
 import Roadmap from "./pages/Roadmap";
 import FinanceLearn from "./pages/FinanceLearn";
+import FAQ from "./pages/FAQ";
 
 function ScrollToTop() {
   const [location] = useLocation();
@@ -35,6 +36,7 @@ function AppRouter() {
         <Route path={"/finance"} component={Finance} />
         <Route path={"/finance-learn"} component={FinanceLearn} />
         <Route path={"/roadmap"} component={Roadmap} />
+        <Route path={"/faq"} component={FAQ} />
         <Route path={"/404"} component={NotFound} />
         {/* Final fallback route */}
         <Route component={NotFound} />
